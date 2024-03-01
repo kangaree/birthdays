@@ -237,7 +237,7 @@ const birthdays = {
   },
   "February 29": {
     name: "The Time Keeper",
-    birthday: "1979-02-29",
+    birthday: "1980-02-29",
   },
   "March 1": {
     name: "Frederic Chopin",
