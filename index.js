@@ -1498,14 +1498,11 @@ function getAgeSuffix(age) {
 }
 
 function getBirthdaySuffix(birthDateString) {
-    const birthDate = new Date(birthDateString);
+    const birthDate = new Date(`${birthDateString}T00:00:00`);
     const today = new Date();
-
+    today.setHours(0, 0, 0, 0);
     const age = today.getFullYear() - birthDate.getFullYear();
-    const isBirthdayPassed = (today.getMonth() > birthDate.getMonth()) || 
-                             (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
-
-    return age + (isBirthdayPassed ? 1 : 0) + getAgeSuffix(age + (isBirthdayPassed ? 1 : 0));
+    return age + getAgeSuffix(age);
 }
 
 // Example usage:
